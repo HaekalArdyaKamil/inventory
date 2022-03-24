@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 //$routes->get('/', 'Login::index');
 //$routes->post('/logincheck', 'Login::logincheck');
 //$routes->get('/logout', 'Login::logout');
-$routes->get('/', 'Supplier::index');
+$routes->get('/dashboard/supplier', 'Supplier::index');
 
 
 /*
