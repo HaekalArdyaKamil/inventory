@@ -25,11 +25,11 @@
     </nav>
     <div class="row width-max">
         <div class="menu-side col-lg-2">
-            <a class="btn" href="<?= base_url('dashboard/index') ?>">Barang</a>
-            <a class="btn" href="<?= base_url('dashboard/pinjam') ?>">Pinjam Barang</a>
-            <a class="btn" href="<?= base_url('dashboard/stok') ?>">Stok</a>
-            <a class="btn" href="<?= base_url('dashboard/transaksi') ?>">Transaksi Barang</a>
-            <a class="btn" href="<?= base_url('dashboard/supplier') ?>">Supplier</a>
+            <a class="btn" href="<?= base_url('/index') ?>">Barang</a>
+            <a class="btn" href="<?= base_url('/pinjam') ?>">Pinjam Barang</a>
+            <a class="btn" href="<?= base_url('/stok') ?>">Stok</a>
+            <a class="btn" href="<?= base_url('/user') ?>">User</a>
+            <a class="btn" href="<?= base_url('/supplier') ?>">Supplier</a>
         </div>
         <div class="container-fluid col-lg-10">
             <div class="card padd">
@@ -89,14 +89,12 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex">
-                        <img class="ganti" src="<?= base_url('img/no-image.png') ?>">
+                        <img class="ganti" style="width: 50%; height: 50%;" src="<?= base_url('img/no-image.png') ?>">
+
                         <div class="kanan">
-                            <h1 class="detail" id="detail_nama"></h1>
-                            <h1 class="detail" id="detail_spesifikasi"></h1>
-                            <h1 class="detail" id="detail_lokasi"></h1>
-                            <h1 class="detail" id="detail_kondisi"></h1>
-                            <h1 class="detail" id="detail_jumlah"></h1>
-                            <h1 class="detail" id="detail_sumber"></h1>
+                            <h4 class="detail" id="detail_nama"></h4>
+                            <h4 class="detail" id="detail_spesifikasi"></h4>
+                            <h4 class="detail" id="detail_lokasi"></h4>
                         </div>
                     </div>
                 </div>
@@ -108,13 +106,13 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 id="judulModal" class="card-title">Tambah Data Barang</h1>
+                    <h1 id="judulModal" class="card-title">Tambah Data</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="<?= base_url('supplier/save') ?>" method="POST" enctype="multipart/form-data">
                         <?= csrf_field(); ?>
-                        <input type="hidden" name="id_barang" id="id_barang">
+                        <input type="hidden" name="id_supplier" id="id_supplier">
                         <div class="row mb-3">
                             <label for="nama" class="col-form-label">Nama Supplier</label>
                             <div class="col-sm-12">

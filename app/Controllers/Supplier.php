@@ -51,10 +51,10 @@ class Supplier extends BaseController
             $namafoto = $foto->getRandomName();
             $foto->move('img', $namafoto);
         }
-        $nama = $this->request->getPost('nama');
-        $spesifikasi = $this->request->getPost('spesifikasi');
-        $lokasi = $this->request->getPost('lokasi');
-        $id = $this->request->getPost('id_barang');
+        $nama = $this->request->getPost('nama_supplier');
+        $spesifikasi = $this->request->getPost('alamat_supplier');
+        $lokasi = $this->request->getPost('telp_supplier');
+        $id = $this->request->getPost('id_supplier');
         $this->dbsupplier->save([
             'id_supplier' => $id,
             'nama_supplier' => $nama,
