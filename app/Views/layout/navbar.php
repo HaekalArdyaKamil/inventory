@@ -9,9 +9,6 @@
             <i class='bx bx-grid-alt' ></i>
             <span class="link_name">MAIN NAVIGATOR</span>
         </a>
-        <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">DATA BARANG</a></li>
-        </ul>
         </li>
         <li>
             <div class="iocn-link">
@@ -34,32 +31,64 @@
                 <i class='bx bx-book-alt' ></i>
                 <span class="link_name">DATA BARANG</span>
                 </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">DATA BARANG</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="/supplier">
+                <i class='bx bx-book-alt' ></i>
+                <span class="link_name">DATA SUPPLIER</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">DATA SUPPLIER</a></li>
+                </ul>
             </div>
         </li>
         <li>
             <div class="iocn-link">
                 <a href="#">
                 <i class='bx bx-book-alt' ></i>
-                <span class="link_name">DATA SUPPLIER</span>
+                <span class="link_name">PEMINJAMAN</span>
                 </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">PEMINJAMAN</a></li>
+                </ul>
             </div>
-        </li>
-        
+        </li>        
         <li>
             <div class="iocn-link">
                 <a href="#">
                 <i class='bx bx-book-alt' ></i>
                 <span class="link_name">DATA PENGGUNA</span>
                 </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">DATA PENGGUNA</a></li>
+                </ul>
             </div>
         </li>
-        
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                <i class='bx bx-book-alt' ></i>
+                <span class="link_name">RUANG</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">RUANG</a></li>
+                </ul>
+            </div>
+        </li>
         <li>
             <div class="iocn-link">
                 <a href="#">
                 <i class='bx bx-book-alt' ></i>
                 <span class="link_name">SUMBER DANA</span>
                 </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">SUMBER DANA</a></li>
+                </ul>
             </div>
         </li>
         

@@ -5,23 +5,45 @@
         <div class="home-content">
         <i class='bx bx-menu' ></i>
         </div>
+    <!-- //Navbar -->
+        <div>
+            <div style="display: inline; font-size:25px; margin:50px;">
+                Supplier
+                <small class="text-muted" style="font-size:15px">Data Supplier</small>
+            </div>
 
-        <h2 style="margin: top 20%;;">Supplier</h2>
+            <div style="display: inline; float:right; margin-right:10px; font-size:20px;">
+                <span class="material-icons-outlined">
+                    dashboard
+                </span>
+                Home 
+                <small class="text-muted" style="font-size:15px"> > Dashboard </small>
+                
+            </div>
+        </div>
+
+    <!-- Table -->
             <div class="container-fluid col-lg-10" style="width: 90%; margin-top: 20px;">        
-                <div class="card padd">
+            <div class="card padd">
                 <div class="card-body">
-                    <div class="couple">                        
-                        <a class="btn btn-add" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span class="material-icons">
-                            add
+                    <div class="couple">      
+                        <a href="#" class="btn btn-warning btn-xs" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float:right;">
+                            + Tambah
                         </a>
+                        <form class="d-flex w-25">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search"
+                                autocomplete="off">
+                            <button class="btn btn-success  btn-xs" type="submit">Search</button>
+                        </form>
                     </div>
-                    <table class="table table-hover">
+
+                    <table class="table table-bordered mt-5">
                         <thead>
-                            <tr>
+                            <tr align="center">
                                 <th>No</th>
                                 <th>Nama Supplier</th>
                                 <th>Alamat</th>
-                                <th class="min-width-15">Telp</th>
+                                <th class="min-width-15">Telepon</th>
                                 <th class="min-width-10">Aksi</th>
                             </tr>
                         </thead>
@@ -29,20 +51,20 @@
                             <?php
                             $i = 1;
                             foreach ($supplier as $spr) : ?>
-                            <tr>
-                                <td><?= $i++; ?></td>
+                            <tr >
+                                <td align="center"><?= $i++; ?></td>
                                 <td><?= $spr['nama_supplier']; ?></td>
                                 <td><?= $spr['alamat_supplier']; ?></td>
                                 <td><?= $spr['telp_supplier']; ?></td>
-                                <td>
-                                    <a class="material-icons icon detail" data-id="<?= $spr['id_supplier']; ?>" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        visibility
+                                <td align="center">                                    
+                                    <a href="#" class="btn btn-warning btn-xs" type="submit" data-id="<?= $spr['id_supplier']; ?>">
+                                        <img src="/img/edit.png" alt="edit" style="height: 20px;">
                                     </a>
-                                    <a class="material-icons icon ubah" data-id="<?= $spr['id_supplier']; ?>" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        edit
+                                    <a href="#" class="btn btn-primary btn-xs" type="submit" data-id="<?= $spr['id_supplier']; ?>">
+                                        <img src="/img/detail.png" alt="edit" style="height: 20px;">
                                     </a>
-                                    <a href="<?= base_url('supplier/delete/' . $spr['id_supplier']) ?>" class="material-icons icon">
-                                        delete
+                                    <a href="<?= base_url('supplier/delete/' . $spr['id_supplier']) ?>" class="btn btn-danger btn-xs" type="submit" data-id="<?= $spr['id_supplier']; ?>">
+                                        <img src="/img/delete.png" alt="edit" style="height: 20px;">
                                     </a>
                                 </td>
                                 </tr>
@@ -50,75 +72,7 @@
                         </tbody>
                     </table>
                 </div>
-                </div>
             </div>
-        </div>
-        
-        <!-- modal detail -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content border-detail">
-                    <div class="modal-header">
-                        <h1 id="juduldModal" class="card-title">Detail Data Supplier</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="d-flex">
-                            <img class="ganti" style="width: 50%; height: 50%;" src="<?= base_url('img/no-image.png') ?>">
-
-                            <div class="kanan">
-                                <h4 class="detail" id="detail_nama"></h4>
-                                <h4 class="detail" id="detail_spesifikasi"></h4>
-                                <h4 class="detail" id="detail_lokasi"></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- modal tambah dan edit -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 id="judulModal" class="card-title">Tambah Data</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="<?= base_url('supplier/save') ?>" method="POST" enctype="multipart/form-data">
-                            <?= csrf_field(); ?>
-                            <input type="hidden" name="id_supplier" id="id_supplier">
-                            <div class="row mb-3">
-                                <label for="nama" class="col-form-label">Nama Supplier</label>
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Supplier">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="spesifikasi" class="col-form-label">Alamat Supplier</label>
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control" name="spesifikasi" id="spesifikasi" placeholder="Alamat Supplier">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="lokasi" class="col-form-label">Telp Supplier</label>
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control" name="lokasi" id="lokasi" placeholder="Telp Supplier">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="foto" class="col-form-label">Foto</label>
-                                <div class="col-sm-12">
-                                    <input type="file" class="form-control" name="foto" id="foto" placeholder="Foto">
-                                </div>
-                            </div>
-                            <div class="d-flex float-end">
-                                <button type="submit" class="btn btn-primary">Tambah</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
