@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-<<<<<<< HEAD
 use App\Models\BarangModel;
 
 class Dashboard extends BaseController
@@ -72,13 +71,5 @@ class Dashboard extends BaseController
         $this->dbbarang->query("DELETE FROM barang WHERE id_barang=" . $id . ";");
         $this->dbbarang->query('COMMIT;');
         return redirect()->to('dashboard');
-=======
-
-class Dashboard extends BaseController
-{
-    public function index()
-    {
-        return view('dashboard');
->>>>>>> 708bb263d0f67993cdbc6faab5a59d738b27468b
     }
 }

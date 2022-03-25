@@ -23,13 +23,13 @@ class LoginFilter implements FilterInterface
      *
      * @return mixed
      */
-    // public function before(RequestInterface $request, $arguments = null)
-    // {
-    //     $sesi = \Config\Services::session();
-    //     if(!$sesi->get('status') == 'login'){
-    //         return redirect()->to('login');
-    //     }
-    // }
+    public function before(RequestInterface $request, $arguments = null)
+    {
+        $sesi = \Config\Services::session();
+        if(!$sesi->get('status') == 'login'){
+            return redirect()->to('login');
+        }
+    }
 
     /**
      * Allows After filters to inspect and modify the response
