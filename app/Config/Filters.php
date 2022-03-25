@@ -23,6 +23,8 @@ class Filters extends BaseConfig
         'honeypot' => Honeypot::class,
         // 'login' => LoginFilter::class
 
+
+
     ];
 
     /**
@@ -36,6 +38,7 @@ class Filters extends BaseConfig
             // 'honeypot',
             // 'csrf',
             // 'login' => ['except' => ['login/*', 'login']]
+
         ],
         'after' => [
             'toolbar',
