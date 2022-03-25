@@ -25,7 +25,7 @@
     </nav>
     <div class="row width-max">
         <div class="menu-side col-lg-2">
-            <a class="btn" href="<?= base_url('dashboard/index') ?>">Barang</a>
+            <a class="btn" href="<?= base_url('/barang') ?>">Barang</a>
             <a class="btn" href="<?= base_url('dashboard/pinjam') ?>">Pinjam Barang</a>
             <a class="btn" href="<?= base_url('dashboard/stok') ?>">Stok</a>
             <a class="btn" href="<?= base_url('dashboard/transaksi') ?>">Transaksi Barang</a>

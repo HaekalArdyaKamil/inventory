@@ -82,31 +82,31 @@
                 Dashboard
               </a>
 
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<?= base_url('/index') ?>">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-chart-area"></i>
                 </div>
-                Data Barang
+                Barang
               </a>
 
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<?= base_url('/pinjam') ?>">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Data Supplier
+                Pinjam
               </a>
 
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<?= base_url('/supplier') ?>">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Peminjaman
+                Supplier
               </a>
 
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<?= base_url('/stok') ?>">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Sumber Dana
+                Stok
               </a>
 
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="<?= base_url('/user') ?>">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Data Pengguna
+                Pengguna
               </a>
 
               <a class="nav-link" href="#">

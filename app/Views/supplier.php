@@ -136,7 +136,6 @@
             <div class="card padd">
                 <div class="card-body">
                     <div class="couple">
-                        <h1 class="card-title">Supplier</h1>
                         <a class="btn btn-add" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span class="material-icons">
                                 add
                             </span>

@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\BarangModel;
 
-class Dashboard extends BaseController
+class Barang extends BaseController
 {
     protected $dbbarang;
     public function __construct()
