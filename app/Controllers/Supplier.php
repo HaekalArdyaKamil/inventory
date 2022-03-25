@@ -21,6 +21,13 @@ class Supplier extends BaseController
     }
     public function save()
     {
+        $foto = $this->request->getFile('foto');
+        if ($foto->getError() == 4) {
+            $namafoto = 'no-image.png';
+        } else {
+            $namafoto = $foto->getRandomName();
+            $foto->move('img', $namafoto);
+        }
         $nama = $this->request->getPost('nama');
         $spesifikasi = $this->request->getPost('spesifikasi');
         $lokasi = $this->request->getPost('lokasi');
@@ -31,20 +38,29 @@ class Supplier extends BaseController
             'nama_supplier' => $nama,
             'alamat_supplier' => $spesifikasi,
             'telp_supplier' => $lokasi,
+            'foto' => $namafoto
         ]);
         return redirect()->to('supplier');
     }
     public function ubah()
     {
-        $nama = $this->request->getPost('nama');
-        $spesifikasi = $this->request->getPost('spesifikasi');
-        $lokasi = $this->request->getPost('lokasi');
+        $foto = $this->request->getFile('foto');
+        if ($foto->getError() == 4) {
+            $namafoto = 'no-image.png';
+        } else {
+            $namafoto = $foto->getRandomName();
+            $foto->move('img', $namafoto);
+        }
+        $nama = $this->request->getPost('nama_supplier');
+        $spesifikasi = $this->request->getPost('alamat_supplier');
+        $lokasi = $this->request->getPost('telp_supplier');
         $id = $this->request->getPost('id_supplier');
         $this->dbsupplier->save([
             'id_supplier' => $id,
             'nama_supplier' => $nama,
             'alamat_supplier' => $spesifikasi,
             'telp_supplier' => $lokasi,
+            'foto' => $namafoto
         ]);
         return redirect()->to('supplier');
     }
@@ -54,6 +70,10 @@ class Supplier extends BaseController
     }
     public function delete($id)
     {
+        $foto = $this->dbsupplier->find($id);
+        if ($foto['foto'] != 'no-image.png') {
+            unlink('img/' . $foto['foto']);
+        }
         $this->dbsupplier->delete($id);
         return redirect()->to('supplier');
     }
