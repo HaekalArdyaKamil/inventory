@@ -1,4 +1,5 @@
 $(function () {
+<<<<<<< HEAD
     let arrow = document.querySelectorAll(".arrow");
   for (var i = 0; i < arrow.length; i++) {
     arrow[i].addEventListener("click", (e)=>{
@@ -15,6 +16,8 @@ $(function () {
   });
 
 
+=======
+>>>>>>> 708bb263d0f67993cdbc6faab5a59d738b27468b
   const baseurl = window.location.origin;
   $(".btn-add").on("click", function () {
     $("#judulModal").html("Tambah Data Barang");

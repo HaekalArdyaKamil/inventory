@@ -3,10 +3,9 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-<<<<<<< HEAD
 use App\Models\BarangModel;
 
-class Dashboard extends BaseController
+class Barang extends BaseController
 {
     protected $dbbarang;
     public function __construct()
@@ -18,7 +17,7 @@ class Dashboard extends BaseController
         $data = [
             'barang' => $this->dbbarang->findAll()
         ];
-        return view('dashboard', $data);
+        return view('barang', $data);
     }
     public function save()
     {
@@ -39,7 +38,7 @@ class Dashboard extends BaseController
             'jumlah_barang' => $jumlah,
             'sumber_dana' => $sumber
         ]);
-        return redirect()->to('dashboard');
+        return redirect()->to('barang');
     }
     public function ubah()
     {
@@ -59,7 +58,7 @@ class Dashboard extends BaseController
             'jumlah_barang' => $jumlah,
             'sumber_dana' => $sumber
         ]);
-        return redirect()->to('dashboard');
+        return redirect()->to('barang');
     }
     public function getubah()
     {
@@ -71,14 +70,6 @@ class Dashboard extends BaseController
         $this->dbbarang->query("DELETE FROM stok WHERE id_barang=" . $id . ";");
         $this->dbbarang->query("DELETE FROM barang WHERE id_barang=" . $id . ";");
         $this->dbbarang->query('COMMIT;');
-        return redirect()->to('dashboard');
-=======
-
-class Dashboard extends BaseController
-{
-    public function index()
-    {
-        return view('dashboard');
->>>>>>> 708bb263d0f67993cdbc6faab5a59d738b27468b
+        return redirect()->to('barang');
     }
 }

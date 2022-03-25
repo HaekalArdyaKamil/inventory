@@ -30,7 +30,10 @@
             <a class="btn" href="<?= base_url('/stok') ?>">Stok</a>
             <a class="btn" href="<?= base_url('/user') ?>">User</a>
             <a class="btn" href="<?= base_url('/supplier') ?>">Supplier</a>
+<<<<<<< HEAD
             <a class="btn" href="<?= base_url('/pemakaian') ?>">Laporan perbaikan</a>
+=======
+>>>>>>> 708bb263d0f67993cdbc6faab5a59d738b27468b
         </div>
         <div class="container-fluid col-lg-10">
             <div class="card padd">
