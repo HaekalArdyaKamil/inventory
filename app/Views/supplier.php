@@ -3,162 +3,136 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('css/dashboard.css') ?>">
     <title>Dashboard</title>
 </head>
 
-<body>
-
-<div class="sidebar close">
-    <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name">Inventaris</span>
-    </div>
-    <ul class="nav-links">
-      <li>
-        <a href="#">
-          <i class='bx bx-grid-alt' ></i>
-          <span class="link_name">Dashboard</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Category</a></li>
-        </ul>
-      </li>
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-collection' ></i>
-            <span class="link_name">Category</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Category</a></li>
-          <li><a href="#">HTML & CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
-          <li><a href="#">PHP & MySQL</a></li>
-        </ul>
-      </li>
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">Posts</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Posts</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Login Form</a></li>
-          <li><a href="#">Card Design</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-pie-chart-alt-2' ></i>
-          <span class="link_name">Analytics</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Analytics</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Chart</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Chart</a></li>
-        </ul>
-      </li>
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-plug' ></i>
-            <span class="link_name">Plugins</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Plugins</a></li>
-          <li><a href="#">UI Face</a></li>
-          <li><a href="#">Pigments</a></li>
-          <li><a href="#">Box Icons</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-compass' ></i>
-          <span class="link_name">Explore</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Explore</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-history'></i>
-          <span class="link_name">History</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">History</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-cog' ></i>
-          <span class="link_name">Setting</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Setting</a></li>
-        </ul>
-      </li>
-      <li>
-    <div class="profile-details">
-      <div class="profile-content">
-        <img src="asset/profile.jpg" alt="profileImg">
-      </div>
-      <div class="name-job">
-        <div class="profile_name">Ahmad Jhony</div>
-        <div class="job">Administrator</div>
-      </div>
-      <i class='bx bx-log-out' ></i>
-    </div>
-  </li>
-</ul>
-  </div>
-  <section class="home-section">
-    <div class="home-content">
-      <i class='bx bx-menu' ></i>
-    </div>
-  </section>
-
-  
-    <nav class="navbar navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand">Dashboard Inventaris</a>
-            <div class="d-flex">
-
-                <a class="btn btn-logout" href="<?= base_url('logout') ?>">Keluar</a>
-            </div>
-        </div>
+<body class="sb-nav-fixed">
+    <nav
+      class="sb-topnav navbar navbar-expand"
+      style="background-color: #b77a1f"
+    >
+      <!-- Navbar Brand-->
+      <a class="navbar-brand ps-3" href="index.html" style="color: white"
+        >Inventaris</a
+      >
+      <!-- Sidebar Toggle-->
+      <button
+        class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+        id="sidebarToggle"
+        href="#!"
+        style="color: white"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Navbar Search-->
+      <!-- Navbar-->
+      <ul
+        class="navbar-nav ms-auto me-0 me-md-3 my-2 my-md-0 d-md-inline-block"
+      >
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            ><i class="fas fa-user fa-fw"></i
+          ></a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdown"
+          >
+            <li><a class="dropdown-item" href="#!">Settings</a></li>
+            <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#!">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
-    <div class="row width-max">
-        <div class="menu-side col-lg-2">
-            <a class="btn" href="<?= base_url('/index') ?>">Barang</a>
-            <a class="btn" href="<?= base_url('/pinjam') ?>">Pinjam Barang</a>
-            <a class="btn" href="<?= base_url('/stok') ?>">Stok</a>
-            <a class="btn" href="<?= base_url('/user') ?>">User</a>
-            <a class="btn" href="<?= base_url('/supplier') ?>">Supplier</a>
-        </div>
-        <div class="container-fluid col-lg-10">
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_nav">
+        <nav
+          class="sb-sidenav accordion"
+          id="sidenavAccordion"
+          style="background-color: #302009"
+        >
+          <div class="sb-sidenav-menu">
+            <div class="nav">
+              <div class="sb-sidenav-menu-heading">Main Navigation</div>
+              <a class="nav-link" href="index.html">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                Dashboard
+              </a>
+
+              <a class="nav-link" href="<?= base_url('/index') ?>">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-chart-area"></i>
+                </div>
+                Barang
+              </a>
+
+              <a class="nav-link" href="<?= base_url('/pinjam') ?>">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Pinjam
+              </a>
+
+              <a class="nav-link" href="<?= base_url('/supplier') ?>">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Supplier
+              </a>
+
+              <a class="nav-link" href="<?= base_url('/stok') ?>">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Stok
+              </a>
+
+              <a class="nav-link" href="<?= base_url('/user') ?>">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Pengguna
+              </a>
+
+              <a class="nav-link" href="#">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Laporan
+              </a>
+            </div>
+          </div>
+          <div class="sb-sidenav-footer">
+            <div class="small">Logged in as:</div>
+            Ahmad Jhonny
+          </div>
+        </nav>
+      </div>
+
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <h1 class="mt-4">Supplier</h1>
+            <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item active">Supplier</li>
+            </ol>
+
+            <div class="container-fluid col-lg-10">
             <div class="card padd">
                 <div class="card-body">
                     <div class="couple">
@@ -205,8 +179,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- modal detail -->
+
+        <!-- modal detail -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-detail">
@@ -272,10 +246,45 @@
             </div>
         </div>
     </div>
+
+
+          </div>
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+          <div class="container-fluid px-4">
+            <div
+              class="d-flex align-items-center justify-content-between small"
+            >
+              <div class="text-muted">
+                Copyright &copy; INVENTARIS SMKN 1 2022
+              </div>
+              <div>
+                <a href="#">Privacy Policy</a>
+                &middot;
+                <a href="#">Terms &amp; Conditions</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+     <script src="js/dashboard.js"></script> 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+      crossorigin="anonymous"
+    ></script>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
+      crossorigin="anonymous"
+    ></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="<?= base_url('js/supplier.js') ?>"></script>
-    <script src="<?= base_url('js/dashboard.js') ?>"></script>
 </body>
 
 </html>

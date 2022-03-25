@@ -34,7 +34,11 @@ $routes->setAutoRoute(true);
 //$routes->get('/', 'Login::index');
 //$routes->post('/logincheck', 'Login::logincheck');
 //$routes->get('/logout', 'Login::logout');
-$routes->get('/', 'Supplier::index');
+$routes->get('/', 'Dashboard::index');
+$routes->get('/supplier', 'Supplier::index');
+$routes->get('/barang', 'Barang::index');
+$routes->get('/user', 'User::index');
+$routes->get('/pinjam', 'Pinjam::index');
 
 
 /*
